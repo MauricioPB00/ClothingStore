@@ -1,0 +1,25 @@
+<div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar" [ngClass]="{ 'active': isSidebarActive }">
+    <div class="custom-menu">
+      <button type="button" class="btn btn-primary" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+    </div>
+    <div class="container">
+      <a href="/home"><img src="../../assets/img/logo.jpg" class="logo-img"></a>
+      <div class="line"></div>
+      <ul class="list-unstyled">
+        <li *ngIf="admin">
+         
+        </li>
+      </ul>
+      <div class="line"></div>
+        <h2>{{ name }}</h2>
+      
+      <div class="logout">
+        <button (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+</div>
