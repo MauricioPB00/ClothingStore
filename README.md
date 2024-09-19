@@ -1,6 +1,6 @@
 instalei o node js
 na pasta do arquivo no cmd npm install -g @angular/cli
-depois rodei ng new routing-sancon 
+depois rodei ng new teste 
 Yes
 Yes
 CSS

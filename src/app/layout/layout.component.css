@@ -1,0 +1,14 @@
+.clothing {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.mainClothing {
+    padding-top:50px;
+    padding-left: 35px;
+    width: 100%;
+    overflow: auto;
+    max-height: 100%;
+}

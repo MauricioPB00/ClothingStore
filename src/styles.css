@@ -1,12 +1,19 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 html, body{
     padding: 0;
     margin: 0;
+    width: 100%;
+    height: 100%;
 }
-@import 'ngx-toastr/toastr';
-@import '~@fortawesome/fontawesome-free/css/all.css';
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+box-sizing: border-box;
+}
+body.dark-mode {
+    /* background-color: #081E36; */
+    background-color: #838383;
+    /* background-color: #0A2E4D; */
+    color: #ffffff;
+}
+
+
+  

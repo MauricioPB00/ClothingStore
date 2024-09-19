@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
@@ -26,6 +27,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     LoginComponent,
     SideBarComponent,
     HomeComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

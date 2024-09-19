@@ -1,25 +1,65 @@
-#sidebar {
+ /*      *        *       SIDEBAR HORIZONTAL      *        *       */
+
+ #horizontal-bar {
+    width: 100%;
+    height: 50px;
+    background: var(--sidebar-color);
+    color: var(--sidebar-txt-color);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.horizontal-menu {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+}
+
+.horizontal-menu li {
+    margin-right: 20px;
+}
+
+.horizontal-menu li a {
+   color: var(--sidebar-txt-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.horizontal-menu li a i {
+    margin-right: 8px;
+}
+
+ /*      *        *       SIDEBAR LATERAL      *        *       */
+
+#sidebar {    
     min-width: 270px;
     max-width: 270px;
-    background: #ffffff;
-    color: #fff;
+    background: var(--sidebar-color);
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
     position: relative;
+    z-index: 1;
 }
 
+#sidebar .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding-bottom: 20px;
+}
 
 #sidebar.active {
     margin-left: -270px;
 }
-
-#sidebar h1 {
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 30px;
-}
-
 
 @media (max-width: 991.98px) {
     #sidebar {
@@ -36,7 +76,7 @@
     position: absolute;
     top: 20px;
     right: 0;
-    margin-right: -40px;
+    margin-right: -20px;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
@@ -51,15 +91,16 @@
 }
 
 #sidebar .custom-menu .btn {
-    width: 80px;
-    height: 80px;
+    top: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: relative;
     z-index: 1;
 }
 
 #sidebar .custom-menu .btn i {
-    margin-right: -40px;
+    margin-right: -20px;
     font-size: 18px;
 }
 
@@ -79,9 +120,10 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    background: #ffffff;
     border-radius: 10px;
-}
+    background: var(--sidebar-color);
+  }
+  
 
 #sidebar .custom-menu .btn.btn-primary:hover,
 #sidebar .custom-menu .btn.btn-primary:focus {
@@ -89,35 +131,99 @@
     border-color: transparent !important;
 }
 
+#darkModeToggle {
+    display: none;
+}
 
+ /*      *        *      CONTEUDO DA SIDEBAR LATERAL      *        *       */
+
+.checkboxDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.checkbox-label {
+    width: 60px;
+    height: 30px;
+    background-color: #f07d17;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox-label i {
+    color: #fff;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.checkbox-label .fa-moon {
+    position: absolute;
+    left: 10px;
+}
+
+.checkbox-label .fa-sun {
+    position: absolute;
+    right: 10px;
+}
+
+.ball {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+input[type="checkbox"]:checked+.checkbox-label {
+    background-color: #081E36;
+}
+
+input[type="checkbox"]:checked+.checkbox-label .ball {
+    transform: translateX(30px);
+}
+
+input[type="checkbox"]:checked+.checkbox-label .fa-sun {
+    display: none;
+}
+
+input[type="checkbox"]:not(:checked)+.checkbox-label .fa-moon {
+    display: none;
+}
 
 .container {
-    background-color: #FFFF;
     top: 0;
     bottom: 0;
     height: 100vh;
-    /* Altura máxima igual à altura da viewport */
     position: relative;
     z-index: 2;
 }
 
 .container img {
     display: block;
-    /* Garante que a imagem não tenha espaços em branco ao redor */
     margin: 0 auto;
-    /* Centraliza a imagem horizontalmente */
     height: auto;
+    z-index: 1;
 }
 
 .logo-img {
     padding-top: 15%;
-    max-width: 15%;
+    max-width: 25%;
 }
 
 .line {
     width: 100%;
     height: 1px;
-    background-color: #ccc;
+    background-color: #f07d17;
     margin-top: 40px;
 }
 
@@ -134,8 +240,7 @@
 .container ul li a {
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    color: black;
+    color: var(--sidebar-txt-color);
     font-size: 1.2em;
     height: 40px;
     line-height: 40px;
@@ -148,122 +253,253 @@
 
 .container ul li a i {
     font-size: 24px;
-    color: black;
+    color: var(--sidebar-txt-color);
     width: 24px;
     height: 24px;
     line-height: 40px;
     margin-right: 20px;
 }
- .sub-menu {
-    padding: 0;
-    margin: 0;
-  }
-  ul .sub-menu{
-    padding-top: 10px;
-    padding-left: 43px;
-    margin: 0;
-  }
-  .sub-menu li {
-    padding: 0;
-    margin: 0;
-  }
-  .sub-menu li ul {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sub-menu li a {
-    text-decoration: none;
-    color: #333; 
-    display: block;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sub-menu li a:hover {
-    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
-  }
 
-  
-  h2 {
-    text-align: center; 
+h2 {
+    text-align: center;
     font-family: "Open Sans", sans-serif;
-    font-size: 19px; /* Tamanho da fonte */
-    color: #333; 
-   margin-top:30px;
-  }
-
-
-/* Estilos adicionais para o ícone de cubos */
-.fa-cubes:before {
-    content: "\f1b3";
-    /* Código do ícone de cubos do FontAwesome */
-    color: black;
-    /* Define a cor do ícone de cubos como preto */
-    font-size: 24px;
-    /* Ajusta o tamanho do ícone */
+    font-size: 19px;
+    color: var(--sidebar-txt-color);
+    font-weight: 300;
 }
 
 .profile-image {
     border-radius: 60%;
     object-fit: cover;
-    /* Garantir que a imagem mantenha suas proporções */
     max-width: 35%;
     position: relative;
-    /* Define a posição relativa para a imagem */
-    top: 20px;
-    /* Move a imagem para baixo em relação à sua posição original */
+    top: 10px;
 }
 
-
 .logout {
-    margin-top: 30px;
     text-align: center;
-    /* Centraliza o conteúdo do contêiner */
+    margin-top: auto;
+    padding-bottom: 20px;
 }
 
 .logout button {
-    /* Estilos do botão (já definidos anteriormente) */
-    padding: 8px 15px;
+    padding: 8px 30px;
     font-family: "Open Sans", sans-serif;
-    background-color: #090909;
-    color: #fff;
+    background-color: var(--sidebar-bt-color);
+    color: var(--sidebar-txt-color);
     border: none;
     border-radius: 7px;
     cursor: pointer;
+    margin-top: 30px;
 }
 
-/* .logout button:hover {
-    background-color: #050505;
-    color: #fbe70b;
-} */
+.logout button:hover {
+    background-color: var(--sidebar-bt-color-hover);
+    color: var(--sidebar-txt-color);
+}
+
+.buttonMinimized {
+    border: none;
+    padding: 5px 20px;
+    text-align: right;
+}
+
+
 @media screen and (max-width: 600px) {
     .logout button {
-      font-size: 14px; /* Reduz o tamanho da fonte para telas menores */
-      padding: 6px 10px; /* Reduz o padding interno */
-      max-width: 150px; /* Ajusta o tamanho máximo para telas menores */
+        font-size: 14px;
+        padding: 6px 10px;
+        max-width: 150px;
     }
+
     .profile-image {
-        max-width: 30%; /* Reduz o tamanho máximo da imagem em telas menores */
-        top: 10px; /* Ajusta a posição da imagem */
-      }
+        max-width: 30%;
+        top: 10px;
+    }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1580px) {
-    /* Ajuste do botão de logout */
     .logout button {
-      padding: 8px 14px; /* Altera o preenchimento interno */
-      max-width: 250px; /* Ajusta o tamanho máximo do botão */
-      font-size: 12px; /* Ajusta o tamanho da fonte */
+        padding: 8px 14px;
+        max-width: 250px;
+        font-size: 12px;
     }
-  
+
     .profile-image {
-      max-width: 30%; 
-      top: 15px; 
+        max-width: 30%;
+        top: 15px;
     }
+
     h2 {
-        text-align: center; 
+        text-align: center;
         font-family: "Open Sans", sans-serif;
-        font-size: 16px; /* Tamanho da fonte */
-        color: #333; 
-       margin-top:14px;
-      }
+        font-size: 16px;
+        color: var(--sidebar-txt-color);
+        margin-top: 14px;
+    }
+}
+
+
+ /*      *        *       SIDEBAR MINIMIZADA      *        *       */
+
+
+#sidebar.minimized {
+    min-width: 80px;
+    max-width: 80px;
+    overflow: visible;
+}
+
+
+#sidebar.minimized .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    width: 80px;
+    padding-top: 80px;
+}
+
+
+#sidebar.minimized .logo-img {
+    display: none;
+}
+
+
+#sidebar.minimized .list-unstyled {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+  
+  #sidebar.minimized .list-unstyled li {
+    margin-bottom: 10px;
+    position: relative; 
+  }
+  
+  #sidebar.minimized .list-unstyled li a {
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 80px; 
+    white-space: nowrap;
+    overflow: hidden;
+    background: var(--sidebar-color);
+    color: var(--sidebar-txt-color);
+    transition: width 0.3s ease, padding-left 0.3s ease;
+    position: relative; 
+  }
+  
+  #sidebar.minimized .list-unstyled li a i {
+    font-size: 25px;
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: var(--sidebar-txt-color);
+  }
+  
+  #sidebar.minimized .list-unstyled li a span {
+    opacity: 0;
+    margin-left: 80px; 
+    transition: opacity 0.3s ease;
+    color: var(--sidebar-txt-color);
+  }
+  
+  #sidebar.minimized .list-unstyled li a:hover {
+    width: 340px;
+    justify-content: flex-start;
+    padding-left: 120px; 
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    z-index: 10;
+  }
+  
+  #sidebar.minimized .list-unstyled li a:hover span {
+    opacity: 1; 
+  }
+
+
+/* #sidebar.minimized .line {
+    display: none; 
+} */
+
+
+#sidebar.minimized .logout {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+#sidebar.minimized .logout h2 {
+    display: none;
+}
+
+
+#sidebar.minimized .logout .profile-image {
+    display: none;
+}
+
+#sidebar.minimized .logout button span {
+    display: none;
+}
+
+#sidebar.minimized .logout button {
+    font-size: 0.8em;
+    padding: 8px 14px;
+    justify-content: center;
+}
+
+#sidebar.minimized .buttonMinimized {
+    width: 100%;
+}
+
+#sidebar.minimized button {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+
+
+#sidebar.minimized .checkbox-label {
+    width: 45px;
+    height: 20px;
+    padding: 2.5px;
+}
+
+#sidebar.minimized .checkbox-label i {
+    font-size: 12px;
+}
+
+#sidebar.minimized .checkbox-label .fa-moon {
+    left: 5px;
+}
+
+#sidebar.minimized .checkbox-label .fa-sun {
+    right: 5px;
+}
+
+#sidebar.minimized .ball {
+    width: 17px;
+    height: 17px;
+    top: 1.25px;
+}
+
+#sidebar.minimized input[type="checkbox"]:checked+.checkbox-label .ball {
+    transform: translateX(25px);
+}
+
+#sidebar.minimized input[type="checkbox"]:checked+.checkbox-label {
+    background-color: #081E36;
+}
