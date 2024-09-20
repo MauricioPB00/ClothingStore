@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { RegisterClothesComponent } from './register-clothes/register-clothes.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guard/auth.guard';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'sidebar', component: SideBarComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
+  { path: 'registration', component: RegisterClothesComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
   { path: '**', component: LoginComponent, canActivate: [AuthGuard] },
 ];
 

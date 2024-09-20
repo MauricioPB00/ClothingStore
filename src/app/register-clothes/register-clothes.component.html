@@ -1,0 +1,22 @@
+<app-layout>
+    <div class="container">
+        <h2 class="header">Cadastro de Roupas</h2>
+        <div class="form-row">
+            <input type="text" class="form-input full-width" readonly [(ngModel)]="nextID" readonly>
+        </div>
+        <div class="form-row">
+            <input type="text" placeholder="Nome" class="form-input" [(ngModel)]="clothes.name">
+            <input type="text" placeholder="Tamanho" class="form-input" [(ngModel)]="clothes.size">
+        </div>
+        <div class="form-row">
+            <input type="text" placeholder="Valor Pago" class="form-input" [(ngModel)]="clothes.resale">
+            <input type="text" placeholder="Valor Final" class="form-input" [(ngModel)]="clothes.bought">
+        </div>
+        <div class="form-row">
+            <button class="form-button full-width" (click)="register()">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</app-layout>
+

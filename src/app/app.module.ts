@@ -13,13 +13,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { HomeComponent } from './home/home.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { LayoutComponent } from './layout/layout.component';
-
-
-
-
+import { RegisterClothesComponent } from './register-clothes/register-clothes.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +25,7 @@ import { LayoutComponent } from './layout/layout.component';
     SideBarComponent,
     HomeComponent,
     LayoutComponent,
+    RegisterClothesComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +36,7 @@ import { LayoutComponent } from './layout/layout.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ModalModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

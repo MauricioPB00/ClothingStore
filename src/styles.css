@@ -1,4 +1,6 @@
 @import '@fortawesome/fontawesome-free/css/all.min.css';
+@import 'ngx-toastr/toastr';
+
 html, body{
     padding: 0;
     margin: 0;
@@ -9,9 +11,7 @@ html, body{
 box-sizing: border-box;
 }
 body.dark-mode {
-    /* background-color: #081E36; */
     background-color: #838383;
-    /* background-color: #0A2E4D; */
     color: #ffffff;
 }
 
