@@ -5,7 +5,9 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { RegisterClothesComponent } from './register-clothes/register-clothes.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guard/auth.guard';
-
+import { SettingsComponent } from './settings/settings.component';
+import { ControlComponent } from './control/control.component';
+import { ApprovalComponent } from './approval/approval.component';
 
 enum Permi { admin = 1, operador = 2 }
 
@@ -14,6 +16,9 @@ const routes: Routes = [
   { path: 'sidebar', component: SideBarComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
   { path: 'registration', component: RegisterClothesComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
+  { path: 'control', component: ControlComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
+  { path: 'approval', component: ApprovalComponent, canActivate: [AuthGuard], data: { roles: [Permi.operador, Permi.admin] } },
   { path: '**', component: LoginComponent, canActivate: [AuthGuard] },
 ];
 

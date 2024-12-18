@@ -1,0 +1,18 @@
+
+.sancon {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.mainSancon {
+    padding-top:65px;
+    padding-left: 15px;
+    width: 100%;
+    overflow: auto;
+    max-height: 100%;
+}
+
+:host ::ng-deep .mainSancon:not(.mainSancon) {
+    display: none;
+}

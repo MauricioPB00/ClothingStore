@@ -15,8 +15,15 @@ import { HomeComponent } from './home/home.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { LayoutComponent } from './layout/layout.component';
 import { RegisterClothesComponent } from './register-clothes/register-clothes.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ControlComponent } from './control/control.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ApprovalComponent } from './approval/approval.component';
+
+import { PhoneFormatDirective } from './config/phone-format.directive';
+import { CpfFormatDirective } from './config/cpf-format.directive';
 
 @NgModule({
   declarations: [
@@ -24,8 +31,12 @@ import { RegisterClothesComponent } from './register-clothes/register-clothes.co
     LoginComponent,
     SideBarComponent,
     HomeComponent,
-    LayoutComponent,
     RegisterClothesComponent,
+    SettingsComponent,
+    ControlComponent,
+    ApprovalComponent,
+    PhoneFormatDirective,
+    CpfFormatDirective
   ],
   imports: [
     BrowserModule,
@@ -37,6 +48,9 @@ import { RegisterClothesComponent } from './register-clothes/register-clothes.co
     ToastrModule.forRoot(),
     ModalModule.forRoot(),
     ReactiveFormsModule,
+    MatTabsModule,
+    MatDialogModule,
+
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

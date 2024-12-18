@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<div [ngClass]="{'sancon': !isLoginRoute}">
+    <app-side-bar *ngIf="!isLoginRoute"></app-side-bar>
+    <div [ngClass]="{'mainSancon': !isLoginRoute}">
+        <router-outlet></router-outlet>
+        <ngx-spinner></ngx-spinner>
+    </div>
+</div>
