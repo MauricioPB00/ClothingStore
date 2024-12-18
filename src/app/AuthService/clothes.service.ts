@@ -19,16 +19,48 @@ export class ClothesService {
         })
     }
 
-    buscarCadastroID(): Observable<any> {
+    getLastRegisterID(): Observable<any> {
         return this.httpClient.get<any>(`${API_CONFIG.baseUrl}/clothes/last`, this.httpOptions)
             .pipe(
                 retry(0),
                 catchError(this.handleError)
             );
     }
-    
+
+    getSuppliers(): Observable<any> {
+        return this.httpClient.get<any>(`${API_CONFIG.baseUrl}/clothes/suppliers`, this.httpOptions)
+            .pipe(
+                retry(0),
+                catchError(this.handleError)
+            );
+    }
+
     postRegisterClothes(aux: any): Observable<any> {
         return this.httpClient.post<any>(`${API_CONFIG.baseUrl}/clothes`, aux, this.httpOptions)
+            .pipe(
+                retry(0),
+                catchError(this.handleError)
+            );
+    }
+
+    postRegisterSupplier(aux: any): Observable<any> {
+        return this.httpClient.post<any>(`${API_CONFIG.baseUrl}/clothes/register/suppliers`, aux, this.httpOptions)
+            .pipe(
+                retry(0),
+                catchError(this.handleError)
+            );
+    }
+
+    postRegisterSale(aux: any): Observable<any> {
+        return this.httpClient.post<any>(`${API_CONFIG.baseUrl}/clothes/register/sale`, aux, this.httpOptions)
+            .pipe(
+                retry(0),
+                catchError(this.handleError)
+            );
+    }
+
+    getSearchClothes(codclothing: any): Observable<any> {
+        return this.httpClient.get<any>(`${API_CONFIG.baseUrl}` + '/clothes/search/' + codclothing, this.httpOptions)
             .pipe(
                 retry(0),
                 catchError(this.handleError)
