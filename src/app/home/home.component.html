@@ -1,2 +1,42 @@
-<app-layout> 
-</app-layout>
+
+    <div class="clothing">
+        <div class="search">
+            <input class="search" type="text" name="" id="searchInput" placeholder="Digite sua busca..."
+                autocomplete="off">
+            <button class="search-btn" (click)="handleSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="results">
+            <table class="table-scroll-wrapper" *ngIf="clothing && clothing.length > 0">
+                <thead>
+                    <tr>
+                        <th style="width:10%;">ID</th>
+                        <th>Nome</th>
+                        <th style="width:10%;">Tamanho</th>
+                        <th style="width:10%;">Valor</th>
+                        <th style="width:5%;">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of clothing">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.size }}</td>
+                        <td>{{ item.resale }}</td>
+                        <td style="text-align: center;">
+                            <i class="fa-solid fa-x" (click)="removeItem(item.id)"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: right; font-weight: bold;">Total:</td>
+                        <td style="font-weight: bold;">{{ getTotalResale() | currency:'BRL' }}</td>
+                        <td style="text-align: center;">
+                            <i class="fa-solid fa-cart-shopping" style="cursor: pointer;" (click)="onCartClick()"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>

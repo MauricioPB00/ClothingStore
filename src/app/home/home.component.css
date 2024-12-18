@@ -1,0 +1,117 @@
+.clothing {
+    position: absolute;
+    top: 20%; 
+    left: 50%; 
+    transform: translate(-50%, 0); 
+    width: 100%;
+    text-align: center;
+}
+
+.search {
+    position: relative;
+    display: inline-block;
+    width: 70%; 
+    max-width: 800px;
+}
+
+.search input {
+    width: 100%; 
+    padding: 15px 50px 15px 15px; 
+    font-size: 18px;
+    border: 1px solid #07DB07;
+    border-radius: 4px;
+    outline: none;
+    background-color: #d3d3d3;
+}
+
+.search input:focus {
+    border-color: #07DB07;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: #07DB07; 
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.search-btn:hover {
+    background: #0f0;
+}
+
+.results {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  table {
+    width: 42%; 
+    border-collapse: collapse;
+    border-radius: 18px;
+    background-color: #252525;
+  }
+
+  .table-scroll-wrapper {
+    max-height: 600px; 
+    overflow-y: auto;
+    display: block;
+  }
+  
+  th {
+    background-color: #252525; 
+    color: #ffffff;  
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: left;
+    border-radius: 8px;
+  }
+  
+  td {
+    background-color: #d3d3d3;  
+    color: #333333; 
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #333333;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f1f1f1;  
+  }
+  
+  tr:hover {
+    background-color: #e2e2e2; 
+  }
+
+  table .fa-x {
+    color: #e74c3c; 
+    font-size: 14px; 
+    cursor: pointer;
+    transition: color 0.3s ease; 
+  }
+  
+  table .fa-x:hover {
+    color: #c0392b;
+  }
+  
+  
+  tfoot {
+    background-color: #2d3e50;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
