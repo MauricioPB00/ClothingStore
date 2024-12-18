@@ -342,7 +342,7 @@ h2 {
  /*      *        *       SIDEBAR MINIMIZADA      *        *       */
 
 
-#sidebar.minimized {
+ #sidebar.minimized {
     min-width: 80px;
     max-width: 80px;
     overflow: visible;
@@ -356,7 +356,7 @@ h2 {
     justify-content: flex-start;
     padding: 0;
     width: 80px;
-    padding-top: 80px;
+    padding-top: 50px;
 }
 
 
@@ -370,64 +370,75 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  #sidebar.minimized .list-unstyled li {
+}
+
+#sidebar.minimized .list-unstyled li {
     margin-bottom: 10px;
-    position: relative; 
-  }
-  
-  #sidebar.minimized .list-unstyled li a {
+    position: relative;
+}
+
+#sidebar.minimized .list-unstyled li a {
     font-size: 0.8em;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px;
-    width: 80px; 
+    width: 74px;
     white-space: nowrap;
     overflow: hidden;
     background: var(--sidebar-color);
     color: var(--sidebar-txt-color);
     transition: width 0.3s ease, padding-left 0.3s ease;
-    position: relative; 
-  }
-  
-  #sidebar.minimized .list-unstyled li a i {
+}
+
+#sidebar.minimized .list-unstyled li a i {
     font-size: 25px;
     position: absolute;
-    left: 50%; 
-    transform: translateX(-50%); 
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     color: var(--sidebar-txt-color);
-  }
-  
-  #sidebar.minimized .list-unstyled li a span {
+}
+
+#sidebar.minimized .list-unstyled li a span {
     opacity: 0;
-    margin-left: 80px; 
+    margin-left: 80px;
     transition: opacity 0.3s ease;
     color: var(--sidebar-txt-color);
-  }
-  
-  #sidebar.minimized .list-unstyled li a:hover {
+}
+
+#sidebar.minimized .list-unstyled li a:hover {
     width: 340px;
     justify-content: flex-start;
-    padding-left: 120px; 
+    padding-left: 120px;
     text-align: center;
     justify-content: center;
     display: flex;
-    z-index: 10;
-  }
-  
-  #sidebar.minimized .list-unstyled li a:hover span {
-    opacity: 1; 
-  }
+    z-index: -1;
+}
 
+#sidebar.minimized .list-unstyled li a:hover span {
+    opacity: 1;
+}
+
+#sidebar.minimized .sidebar-content {
+    padding-top: 0px
+}
+
+.sidebar-content span {
+    position: relative;
+    z-index: 10;
+}
+
+.sidebar-content::-webkit-scrollbar {
+    z-index: 5;
+}
 
 /* #sidebar.minimized .line {
-    display: none; 
+   display: none; 
 } */
 
 
@@ -436,6 +447,10 @@ h2 {
     width: 100%;
     text-align: center;
     padding-bottom: 20px;
+}
+
+#sidebar.minimized .logout i {
+    font-size: 14px;
 }
 
 

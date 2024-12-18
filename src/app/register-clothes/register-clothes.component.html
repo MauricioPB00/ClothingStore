@@ -1,22 +1,86 @@
-<app-layout>
+
     <div class="container">
-        <h2 class="header">Cadastro de Roupas</h2>
+        <div *ngIf="!isSuppliers">
+        <p class="header">Cadastro de Roupas</p>
+        
         <div class="form-row">
-            <input type="text" class="form-input full-width" readonly [(ngModel)]="nextID" readonly>
+            <div class="form-column">
+                <p>ID da Roupa:</p>
+                <input type="text" class="form-input full-width" readonly [(ngModel)]="nextID" style="background-color: rgb(204, 203, 203);">
+            </div>
         </div>
+
         <div class="form-row">
-            <input type="text" placeholder="Nome" class="form-input" [(ngModel)]="clothes.name">
-            <input type="text" placeholder="Tamanho" class="form-input" [(ngModel)]="clothes.size">
+            <div class="form-column">
+                <p>Nome:</p>
+                <input type="text" placeholder="Nome" class="form-input" [(ngModel)]="clothes.name">
+            </div>
+            <div class="form-column">
+                <p>Tamanho:</p>
+                <input type="text" placeholder="Tamanho" class="form-input" [(ngModel)]="clothes.size">
+            </div>
         </div>
+
         <div class="form-row">
-            <input type="text" placeholder="Valor Pago" class="form-input" [(ngModel)]="clothes.resale">
-            <input type="text" placeholder="Valor Final" class="form-input" [(ngModel)]="clothes.bought">
+            <div class="form-column">
+                <p>Valor Pago:</p>
+                <input type="text" placeholder="Valor Pago" class="form-input" [(ngModel)]="clothes.resale">
+            </div>
+            <div class="form-column">
+                <p>Valor Final:</p>
+                <input type="text" placeholder="Valor Final" class="form-input" [(ngModel)]="clothes.bought">
+            </div>
         </div>
+
         <div class="form-row">
-            <button class="form-button full-width" (click)="register()">
+            <div class="form-column">
+                <p>Fornecedor:</p>
+                <select class="form-input" name="Fornecedor" id="Fornecedor" [(ngModel)]="selectedSupplier">
+                    <option value="" disabled selected>Selecione um fornecedor</option>
+                    <option *ngFor="let supplier of suppliers" [value]="supplier.id">{{ supplier.name }}</option>
+                </select>
+            </div>
+                <button class="btnSupplier" (click)="addSupplier()">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </button>
+            
+        </div>
+    </div>
+    <p class="header" *ngIf="isSuppliers">Cadastro de Fornecedor</p>
+        <div class="form-row" *ngIf="isSuppliers">
+            <div class="form-column">
+                <p>Nome do Fornecedor:</p>
+                <input type="text" placeholder="Nome" class="form-input" [(ngModel)]="supplier.name">
+            </div>
+            <div class="form-column">
+                <p>Telefone do Fornecedor:</p>
+                <input type="text" placeholder="Phone" class="form-input" [(ngModel)]="supplier.phone">
+            </div>
+        </div> 
+        
+        <div class="form-row" *ngIf="isSuppliers">
+            <div class="form-column">
+                <p>Cidade do Fornecedor:</p>
+                <input type="text" placeholder="City" class="form-input" [(ngModel)]="supplier.city">
+            </div>
+        </div>        
+        <div *ngIf="isSuppliers">
+        <div class="form-row">
+            <button class="btnCancelar" (click)="back()">
+                <i class="fa-solid fa-x"></i>
+            </button>
+            <button class="btn" (click)="register()">
                 <i class="fa fa-paper-plane" aria-hidden="true"></i>
             </button>
         </div>
     </div>
-</app-layout>
+    <div *ngIf="!isSuppliers">
+            <button class="btnClothes" (click)="registerClothes()">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        
+    </div>
+    </div>
+
+
 
